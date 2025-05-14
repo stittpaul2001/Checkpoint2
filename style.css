@@ -1,0 +1,14 @@
+body {
+  background-image: url(Moon.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+header {
+  text-align: top;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgb(238, 159, 22);
+  font-size: xx-large;
+  position: bottom;
+}
