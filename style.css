@@ -1,5 +1,5 @@
 body {
-  background-image: url(Moon.avif);
+  background-image: url(background.avif);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -11,4 +11,9 @@ header {
   text-shadow: 2px 2px 4px rgb(238, 159, 22);
   font-size: xx-large;
   position: bottom;
+}
+
+.moon-1 {
+  max-height: 80vh;
+  display: flex;
 }
