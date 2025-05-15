@@ -19,7 +19,7 @@
   <header class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center mt-3">
-        <h1>Moon Miner</h1>
+        <h1 class="fw-bold">Moon Miner</h1>
         <hr>
       </div>
     </div>
@@ -27,60 +27,82 @@
       <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
           <div class="col-md-5 text-center">
-            <img onclick="mine()" class="img-fluid moon-1" src="moon1.avif" alt="picture of a moon">
+            <img onclick="mine()" class="img-fluid moon-1 border" src="moon1.avif" alt="picture of a moon">
           </div>
         </div>
       </div>
       <div class="row justify-content-center align-content-center">
         <div class="col-md-4 text-center">
-          <h2 class="text-center" id="cheese-amount">Cheese Bank:</h2>
+          <span class="text-center fs-1 fw-bold" id="cheese-amount">Cheese Bank: 0</span>
+          <hr>
         </div>
       </div>
-      <div class="row justify-content-center align-content-center">
-        <div class="col-md-6">
+      <div class="row justify-content-center align-content-center mb-3">
+        <div class="col-md-6 text-center">
           <div class="row">
             <div class="col-md-6">
-              <span class="fs-1">Click Upgrades</span>
-              <div class="">
-                <button class="btn btn-primary" onclick="">Buy Pickaxe
-                  <span id="">🧀10</span>
+              <span class="fs-1 fw-bold">Click Upgrades</span>
+              <hr>
+              <div>
+                <button class="btn btn-primary border fs-4 text-dark" onclick="buyPickaxe()">Buy Pickaxe
+                  <span class="text-light" id="pickaxe">🧀10</span>
                 </button>
-                <span>Bonus +1</span>
+                <span class="fs-4 fw-bold">Bonus +1</span>
                 <div>
-                  <button id="" class="btn btn-primary" onclick="">Buy Drill
-                    <span id="">🧀20</span>
+                  <button id="" class="btn btn-primary border fs-4 text-dark" onclick="buyDrill()">Buy Drill
+                    <span class="text-light" id="">🧀20</span>
                   </button>
-                  <span>Bonus + 10</span>
+                  <span class="fs-4 fw-bold">Bonus + 10</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <span class="fs-1 text-end">Automatic Upgrades</span>
-              <div class="">
-                <button class="btn btn-primary" onclick="">Buy Rover
+              <span class="fs-1 fw-bold">Automatic Upgrades</span>
+              <hr>
+              <div>
+                <button class="btn btn-primary border fs-4" onclick="">Buy Rover
                   <span id="">🧀600</span>
                 </button>
-                <span>Bonus + 20</span>
+                <span class="fs-3 fw-bold"> Bonus + 20</span>
               </div>
-              <button id="" class="btn btn-primary" onclick="">Buy SpaceStation
+              <button id="" class="btn btn-primary border fs-4" onclick="">Buy SpaceStation
                 <span id="">🧀1000</span>
               </button>
-              <span>Bonus + 50</span>
+              <span class="fs-3 fw-bold">Bonus + 50</span>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
           <div class="row">
             <div class="col-md-6">
-              <span class="fs-3">Click Stats</span>
-              <div class=""></div>
+              <span class="fs-1 fw-bold">Click Stats</span>
+              <hr>
+              <div>
+                <button class="btn btn-primary border fs-4 text-dark shadow">Pickaxes Purchased:
+                  <span class="text-light" id="pickaxe-quantity">0</span>
+                </button>
+                <div>
+                  <button class="btn btn-primary border fs-4 text-dark shadow">Drills Purchased:
+                    <span class="text-light" id="drill-quantity">0</span>
+                  </button>
+                </div>
+              </div>
             </div>
             <div class="col-md-6">
-              <span class="fs-3">Automatic Stats</span>
-              <div class=""></div>
+              <span class="fs-1 fw-bold">Automatic Stats</span>
+              <hr>
+              <div>
+                <button class="btn btn-primary border fs-4" onclick="">Rovers Purchased:
+                  <span id="">0</span>
+                </button>
+              </div>
+              <button id="" class="btn btn-primary border fs-4" onclick="">SpaceStation Purchased:
+                <span id="">0</span>
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </main>
   </header>
 
