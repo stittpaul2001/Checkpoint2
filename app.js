@@ -1,3 +1,5 @@
+// Global Variables
+
 let cheese = 0;
 
 
@@ -31,17 +33,21 @@ let automaticUpgrades = [
   }
 ];
 
+// Section-Logic Section
+// function to increase the cheese amount
 
 function mine() {
-  let totalBonus = 1,
-    clickUpgrades.forEach(upgrade => {
-      totalBonus += upgrade.bonus * upgrade.quantity;
-    });
+  let totalBonus = 1
+  clickUpgrades.forEach(upgrade => {
+    totalBonus += upgrade.quantity * upgrade.bonus
+  })
   cheese += totalBonus
-  updatecheeseDisplay()
-  console.log(`mined ${cheese} cheese`);
+  updateCheeseDisplay()
+  console.log(`you have mined ${cheese} cheese`)
 }
 
-function updatecheeseDisplay() {
-  document.getElementById('cheese-count').innerText = `Cheese:${cheese}`;
+// Section-Draw Section
+function updateCheeseDisplay() {
+  document.getElementById('cheese-amount').innerText = `Cheese Bank:🧀 ${cheese}`
 }
+// setInterval(collectAutoUpgrades, 3000);
