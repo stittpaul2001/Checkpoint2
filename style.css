@@ -14,8 +14,25 @@ header {
 }
 
 .moon-1 {
-  max-height: 80vh;
+  max-height: 84vh;
   display: flex;
 
 
+}
+
+.bottom-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.border-bottom {
+  border: thick;
+  color: greenyellow;
+}
+
+.border {
+  color: hotpink;
+  border: thick
 }

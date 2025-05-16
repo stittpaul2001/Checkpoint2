@@ -70,6 +70,51 @@ function buyDrill() {
   updateDrill()
 }
 
+
+function buyRover() {
+  const rover = automaticUpgrades.find(upgrade => upgrade.name === 'rover')
+  if (cheese >= rover.price) {
+    cheese -= rover.price
+    rover.price++
+    rover.quantity++
+    console.log('Purchasing a rover')
+    updateCheeseDisplay()
+  }
+  updateRover()
+}
+
+function buySpacestation() {
+  const spacestation = automaticUpgrades.find(upgrade => upgrade.name === 'spacestation')
+  if (cheese >= spacestation.price) {
+    cheese -= spacestation.price
+    spacestation.price++
+    spacestation.quantity++
+    console.log('Purchasing a spacestation')
+    updateCheeseDisplay()
+  }
+  updateSpacestation()
+}
+
+function collectAutomaticUpgrades() {
+  automaticUpgrades.forEach(upgrade => {
+    cheese += upgrade.quantity * upgrade.bonus
+  })
+  updateCheeseDisplay()
+}
+
+function buyAutomaticUpgrade() {
+  automaticUpgrades.forEach(upgrade => {
+    if (cheese >= upgrade.price)
+      cheese -= upgrade.price
+    upgrade.price++
+    upgrade.quantity++
+    console.log('automatic upgrades being purchased')
+    collectAutomaticUpgrades()
+  })
+  updateCheeseDisplay()
+  updateAutomaticUpgrades()
+}
+
 // Section-Draw Section
 function updateCheeseDisplay() {
   document.getElementById('cheese-amount').innerText = `Cheese Bank:🧀 ${cheese}`
@@ -86,4 +131,32 @@ function updateDrill() {
   let drillElem = document.getElementById('drill-quantity')
   drillElem.innerText = `${drill.quantity}`
 }
-// setInterval(collectAutoUpgrades, 3000);
+
+function updateRover() {
+  const rover = automaticUpgrades.find(upgrade => upgrade.name === 'rover')
+  let roverElem = document.getElementById('rover-count')
+  roverElem.innerText = `${rover.quantity}`
+
+}
+
+function updateSpacestation() {
+  const spacestation = automaticUpgrades.find(upgrade => upgrade.name === 'spacestation')
+  let spacestationElem = document.getElementById('spacestation-owned')
+  spacestationElem.innerText = `${spacestation.quantity}`
+}
+
+function updateAutomaticUpgrades() {
+  const rover = automaticUpgrades.find(upgrade => upgrade.name === 'rover')
+  let roverElem = document.getElementById('rovers-count')
+  roverElem.innerText = `Total Rovers: ${rover.quantity}`
+
+  const spacestation = automaticUpgrades.find(upgrade => upgrade.name === 'spacestation')
+  let spacestationElem = document.getElementById('spacestations-owned')
+  spacestationElem.innerText = `Total Spacestations ${spacestation.quantity}`
+}
+
+
+
+
+// Loads when open
+setInterval(collectAutomaticUpgrades, 3000)
